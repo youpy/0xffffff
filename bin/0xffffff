@@ -41,7 +41,7 @@ def main
   flickr.access_token = token
   flickr.access_secret = secret
 
-  FlickrColorUploader::Runner.new(Pathname('~/.0xffffff').expand_path).run
+  FFFFFF::Runner.new(Pathname('~/.0xffffff').expand_path).run
 end
 
 main
