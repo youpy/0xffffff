@@ -92,7 +92,7 @@ module FFFFFF
             uploader.upload(path)
           end
 
-          @logger.info('upload #%i' % count)
+          @logger.info('upload #%i' % count.to_s(16).rjust(6, '0'))
         end
 
         Util.wait(1)
