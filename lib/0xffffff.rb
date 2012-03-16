@@ -4,6 +4,8 @@ require 'flickraw'
 require 'chunky_png'
 require 'logger'
 
+$stdout.sync = true
+
 FlickRaw.api_key = 'accf136891b91047e61bd08ca84a4ee6'
 FlickRaw.shared_secret = 'cdc468e584605aea'
 
