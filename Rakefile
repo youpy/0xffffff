@@ -14,11 +14,11 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "flickr-color-uploader"
-  gem.homepage = "http://github.com/youpy/flickr-color-uploader"
+  gem.name = "0xffffff"
+  gem.homepage = "http://github.com/youpy/0xffffff"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{A Tool to Upload Images}
+  gem.description = %Q{A Tool to Upload 0xffffff Images to Flickr}
   gem.email = "youpy@buycheapviagraonlinenow.com"
   gem.authors = ["youpy"]
   # dependencies defined in Gemfile
@@ -31,19 +31,4 @@ RSpec::Core::RakeTask.new(:spec) do |spec|
   spec.pattern = FileList['spec/**/*_spec.rb']
 end
 
-RSpec::Core::RakeTask.new(:rcov) do |spec|
-  spec.pattern = 'spec/**/*_spec.rb'
-  spec.rcov = true
-end
-
 task :default => :spec
-
-require 'rdoc/task'
-Rake::RDocTask.new do |rdoc|
-  version = File.exist?('VERSION') ? File.read('VERSION') : ""
-
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "flickr-color-uploader #{version}"
-  rdoc.rdoc_files.include('README*')
-  rdoc.rdoc_files.include('lib/**/*.rb')
-end

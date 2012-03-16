@@ -1,8 +1,8 @@
-= flickr-color-uploader
+= 0xffffff
 
 Description goes here.
 
-== Contributing to flickr-color-uploader
+== Contributing to 0xffffff
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.

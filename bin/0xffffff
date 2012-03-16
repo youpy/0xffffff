@@ -1,0 +1,47 @@
+#!/usr/bin/env ruby
+require 'rubygems'
+require 'pathname'
+require 'pit'
+require '0xffffff'
+
+def get_access_token
+  token = flickr.get_request_token
+  auth_url = flickr.get_authorize_url(token['oauth_token'], :perms => 'delete')
+
+  puts "Open this url in your process to complete the authication process:"
+  puts auth_url
+  puts "Copy here the number given when you complete the process."
+  verify = gets.strip
+
+  begin
+    flickr.get_access_token(token['oauth_token'], token['oauth_token_secret'], verify)
+    login = flickr.test.login
+    puts "You are now authenticated as #{login.username} with token #{flickr.access_token} and secret #{flickr.access_secret}"
+
+    [flickr.access_token, flickr.access_secret]
+  rescue FlickRaw::FailedResponse => e
+    puts "Authentication failed : #{e.msg}"
+  end
+end
+
+def main
+  config = Pit.get("flickr.com")
+  token = config['color_uploader_access_token']
+  secret = config['color_uploader_access_secret']
+
+  unless token && secret
+    token, secret = get_access_token
+
+    Pit.set("flickr.com", :data => {
+        "color_uploader_access_token" => token,
+        "color_uploader_access_secret" => secret
+      })
+  end
+
+  flickr.access_token = token
+  flickr.access_secret = secret
+
+  FlickrColorUploader::Runner.new(Pathname('~/.0xffffff').expand_path).run
+end
+
+main
