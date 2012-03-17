@@ -1,6 +1,14 @@
 = 0xffffff
 
-Description goes here.
+A Tool to Upload 0xffffff Images to Flickr
+
+== Installation
+
+ gem install 0xffffff
+
+== Usage
+
+ $ 0xffffff
 
 == Contributing to 0xffffff
  
