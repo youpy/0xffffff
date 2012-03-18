@@ -31,7 +31,7 @@ describe Runner do
 
     it 'should raise if count exceeds the max colors' do
       open(@path, 'w') do |f|
-        f.write(0xffffff)
+        f.write(0x1000000)
       end
 
       Uploader.should_receive(:new).and_return(uploader = mock)

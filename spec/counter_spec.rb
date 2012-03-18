@@ -18,18 +18,15 @@ describe Counter do
       x = 0;
 
       counter = Counter.new(@path.to_s)
-
       counter.count_up do |count|
         x = count
       end
 
-      x.should eql(124)
+      x.should eql(123)
 
-      counter.count_up do |count|
-        x = count
+      open(@path) do |f|
+        f.read.chomp.to_i.should eql(124)
       end
-
-      x.should eql(125)
     end
 
     it 'should count up even if file does not exist' do
@@ -40,7 +37,11 @@ describe Counter do
         x = count
       end
 
-      x.should eql(1)
+      x.should eql(0)
+
+      open(@path) do |f|
+        f.read.chomp.to_i.should eql(1)
+      end
     end
   end
 end

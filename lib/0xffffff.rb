@@ -20,10 +20,10 @@ module FFFFFF
 
     def count_up
       count = read
-      count += 1
 
       yield count
 
+      count += 1
       write(count)
     end
 
