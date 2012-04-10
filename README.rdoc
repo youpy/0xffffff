@@ -1,4 +1,4 @@
-= 0xffffff
+= 0xffffff {<img src="https://secure.travis-ci.org/youpy/0xffffff.png?rvm=1.9.3" />}[http://travis-ci.org/youpy/0xffffff]
 
 A Tool to Upload 0xffffff Images to Flickr
 
