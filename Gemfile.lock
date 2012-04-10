@@ -1,3 +1,10 @@
+PATH
+  remote: .
+  specs:
+    0xffffff (0.1.0)
+      chunky_png
+      flickraw-cached
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -29,7 +36,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  chunky_png
-  flickraw-cached
+  0xffffff!
   jeweler (~> 1.8.3)
   rspec (~> 2.8.0)
